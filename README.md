@@ -49,14 +49,13 @@ Save Your Changes: Ensure you save the script after making any modifications.
 
 Run the Script: Open a command prompt or terminal, navigate to the directory where the script is located, and run the script by executing:
 
-bash
  
 python script.py
 Organization Process: The script will analyze each file in the target directory, determine its file extension, and move it to the appropriate subdirectory based on the File_Types mapping.
 
 Enjoy a Cleaner Directory: Once the script completes its operation, your files will be neatly organized into subdirectories.
 
-File Types Mapping
+## File Types Mapping
 The heart of this script is the File_Types dictionary. It associates file extensions with directory names. You can define your own extensions and directories to customize the organization to your liking.
 
 For instance, if you frequently deal with image files, you might want to create a "Pictures" directory for files with ".jpg" and ".png" extensions. Here's an example:
@@ -69,7 +68,7 @@ File_Types = {
 }
 Make sure that the directory names you define in the mapping already exist in your target directory. The script will not create new directories; it will move files to existing ones.
 
-Customization
+## Customization
 
 Beyond the File_Types dictionary, you can further customize this script to suit your specific needs. Here are some additional customization options:
 
@@ -86,37 +85,37 @@ def Change_Directory():
     # Return the path of the new directory
     return os.getcwd()
     
-Modify Directory Creation Behavior
+## Modify Directory Creation Behavior
 
 The script currently attempts to create subdirectories if they don't already exist in the target directory. If you want to change this behavior, you can modify the Create_Directory() function. For example, if you prefer not to create directories automatically, remove the os.mkdir(file) line.
 
-Exclude Specific File Types
+## Exclude Specific File Types
 
 If you have specific file types that you want to exclude from organization, you can add conditional statements in the Moving_Files() function to skip those file types. For instance, if you want to skip organizing ".exe" files, you can add:
 if extension == ".exe":
     continue  # Skip organizing .exe files
 
-Advanced Usage
+## Advanced Usage
 
 While the script is designed for simplicity, you can explore more advanced use cases:
 
-Scheduled Execution
+## Scheduled Execution
 
 You can schedule the script to run at specific intervals using tools like Task Scheduler on Windows or cron jobs on Unix-based systems. This way, your designated directory stays organized automatically.
 
-Integration with Other Tools
+## Integration with Other Tools
 
 You can integrate this script into more extensive automation workflows or scripts. For example, you might want to combine it with a backup script to organize and back up files simultaneously.
 
-Error Handling
+## Error Handling
 
 The script includes basic error handling to ensure it runs smoothly. If the subdirectories already exist, it will ignore the error and proceed with organizing the files. You can customize error handling further to fit your requirements.
 
-Contributing
+##Contributing
 
 If you'd like to contribute to this project, feel free to fork it, make improvements, and submit a pull request. Contributions such as additional features, better error handling, or improved documentation are welcome.
 
-License
+## License
 
 This script is provided under the MIT License. You can find the full license details in the LICENSE file.
 By organizing your files efficiently, this script can save you time and reduce the frustration of navigating cluttered directories. Feel free to adapt it to your specific needs, and don't hesitate to contribute to its development. Happy organizing!
