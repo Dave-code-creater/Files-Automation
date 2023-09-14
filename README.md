@@ -70,9 +70,11 @@ File_Types = {
 Make sure that the directory names you define in the mapping already exist in your target directory. The script will not create new directories; it will move files to existing ones.
 
 Customization
+
 Beyond the File_Types dictionary, you can further customize this script to suit your specific needs. Here are some additional customization options:
 
 Change Default Target Directory
+
 If you don't want to organize the Downloads directory or wish to organize a different directory, update the Change_Directory() function with the path to your target directory.
 def Change_Directory():
     # Store the current working directory
@@ -83,29 +85,39 @@ def Change_Directory():
 
     # Return the path of the new directory
     return os.getcwd()
+    
 Modify Directory Creation Behavior
+
 The script currently attempts to create subdirectories if they don't already exist in the target directory. If you want to change this behavior, you can modify the Create_Directory() function. For example, if you prefer not to create directories automatically, remove the os.mkdir(file) line.
 
 Exclude Specific File Types
+
 If you have specific file types that you want to exclude from organization, you can add conditional statements in the Moving_Files() function to skip those file types. For instance, if you want to skip organizing ".exe" files, you can add:
 if extension == ".exe":
     continue  # Skip organizing .exe files
+
 Advanced Usage
+
 While the script is designed for simplicity, you can explore more advanced use cases:
 
 Scheduled Execution
+
 You can schedule the script to run at specific intervals using tools like Task Scheduler on Windows or cron jobs on Unix-based systems. This way, your designated directory stays organized automatically.
 
 Integration with Other Tools
+
 You can integrate this script into more extensive automation workflows or scripts. For example, you might want to combine it with a backup script to organize and back up files simultaneously.
 
 Error Handling
+
 The script includes basic error handling to ensure it runs smoothly. If the subdirectories already exist, it will ignore the error and proceed with organizing the files. You can customize error handling further to fit your requirements.
 
 Contributing
+
 If you'd like to contribute to this project, feel free to fork it, make improvements, and submit a pull request. Contributions such as additional features, better error handling, or improved documentation are welcome.
 
 License
+
 This script is provided under the MIT License. You can find the full license details in the LICENSE file.
 By organizing your files efficiently, this script can save you time and reduce the frustration of navigating cluttered directories. Feel free to adapt it to your specific needs, and don't hesitate to contribute to its development. Happy organizing!
 
