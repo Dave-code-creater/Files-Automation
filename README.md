@@ -48,14 +48,12 @@ Specify the Target Directory: Modify the Change_Directory() function to specify 
 Save Your Changes: Ensure you save the script after making any modifications.
 
 Run the Script: Open a command prompt or terminal, navigate to the directory where the script is located, and run the script by executing:
-
- 
 python script.py
 Organization Process: The script will analyze each file in the target directory, determine its file extension, and move it to the appropriate subdirectory based on the File_Types mapping.
 
 Enjoy a Cleaner Directory: Once the script completes its operation, your files will be neatly organized into subdirectories.
 
-** File Types Mapping **
+## File Types Mapping 
 The heart of this script is the File_Types dictionary. It associates file extensions with directory names. You can define your own extensions and directories to customize the organization to your liking.
 
 For instance, if you frequently deal with image files, you might want to create a "Pictures" directory for files with ".jpg" and ".png" extensions. Here's an example:
@@ -68,7 +66,7 @@ File_Types = {
 }
 Make sure that the directory names you define in the mapping already exist in your target directory. The script will not create new directories; it will move files to existing ones.
 
-** Customization **
+## Customization 
 
 Beyond the File_Types dictionary, you can further customize this script to suit your specific needs. Here are some additional customization options:
 
