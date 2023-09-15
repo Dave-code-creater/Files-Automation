@@ -43,6 +43,7 @@ To use this script, you need the following:
        ".mp3": "Music",
        # Add more extensions and directories as needed
    }
+   ```
 Specify the Target Directory: Modify the Change_Directory() function to specify the directory you want to organize. By default, it's set to 'C:/Users/Admin/Downloads'. Replace this path with the path of your target directory.
 
 Save Your Changes: Ensure you save the script after making any modifications.
