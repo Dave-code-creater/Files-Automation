@@ -36,7 +36,8 @@ To use this script, you need the following:
 
 3. **Customize the Mapping**: Customize the `File_Types` dictionary to match your desired file organization structure. This dictionary associates file extensions with directory names. For example:
 
-   ```python
+   ```
+   python
    File_Types = {
        ".jpg": "Pictures",
        ".pdf": "Documents",
@@ -51,6 +52,7 @@ Save Your Changes: Ensure you save the script after making any modifications.
 Run the Script: Open a command prompt or terminal, navigate to the directory where the script is located, and run the script by executing:
 ```python
 python script.py
+```
 Organization Process: The script will analyze each file in the target directory, determine its file extension, and move it to the appropriate subdirectory based on the File_Types mapping.
 
 Enjoy a Cleaner Directory: Once the script completes its operation, your files will be neatly organized into subdirectories.
@@ -67,6 +69,7 @@ File_Types = {
     ".zip": "Archives",
     # Add more extensions and directories as needed
 }
+```
 Make sure that the directory names you define in the mapping already exist in your target directory. The script will not create new directories; it will move files to existing ones.
 
 ## Customization 
@@ -86,7 +89,7 @@ def Change_Directory():
 
     # Return the path of the new directory
     return os.getcwd()
-    
+```
 ## Modify Directory Creation Behavior
 
 The script currently attempts to create subdirectories if they don't already exist in the target directory. If you want to change this behavior, you can modify the Create_Directory() function. For example, if you prefer not to create directories automatically, remove the os.mkdir(file) line.
@@ -97,7 +100,7 @@ If you have specific file types that you want to exclude from organization, you 
 ```python
 if extension == ".exe":
     continue  # Skip organizing .exe files
-
+```
 ## Advanced Usage
 
 While the script is designed for simplicity, you can explore more advanced use cases:
@@ -114,7 +117,7 @@ You can integrate this script into more extensive automation workflows or script
 
 The script includes basic error handling to ensure it runs smoothly. If the subdirectories already exist, it will ignore the error and proceed with organizing the files. You can customize error handling further to fit your requirements.
 
-##Contributing
+## Contributing
 
 If you'd like to contribute to this project, feel free to fork it, make improvements, and submit a pull request. Contributions such as additional features, better error handling, or improved documentation are welcome.
 
