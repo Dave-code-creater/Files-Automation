@@ -41,9 +41,13 @@ def List_All_Files():
 
 # Function to create subdirectories based on the File_Types dictionary
 def Create_Directory(Directory):
-    for file in File_Types.values():
-        # Create a subdirectory in the specified directory
-        os.mkdir(file)
+    for directory in File_Types :
+        if os.path.exists(Directory+File_Types[directory]):
+            continue
+        else:
+            for file in File_Types.values():
+                # Create a subdirectory in the specified directory
+                os.mkdir(file)
 
 # Function to move files to their respective subdirectories
 def Moving_Files(Directory):
@@ -76,7 +80,7 @@ if __name__ == "__main__":
 
     # Try to create subdirectories (ignore if they already exist)
     try:
-        Create_Directory(Directory)
+        # Create_Directory(Directory)
     except:
         pass
 
