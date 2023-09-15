@@ -1,4 +1,4 @@
-# Files_Automation
+
 # File Organizer Script
 
 This is a Python script designed to organize files in a directory based on their file extensions. It categorizes files into subdirectories according to a predefined mapping of file extensions to directory names.
