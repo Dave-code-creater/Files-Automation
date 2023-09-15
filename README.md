@@ -48,6 +48,7 @@ Specify the Target Directory: Modify the Change_Directory() function to specify 
 Save Your Changes: Ensure you save the script after making any modifications.
 
 Run the Script: Open a command prompt or terminal, navigate to the directory where the script is located, and run the script by executing:
+```python
 python script.py
 Organization Process: The script will analyze each file in the target directory, determine its file extension, and move it to the appropriate subdirectory based on the File_Types mapping.
 
@@ -58,6 +59,7 @@ The heart of this script is the File_Types dictionary. It associates file extens
 
 For instance, if you frequently deal with image files, you might want to create a "Pictures" directory for files with ".jpg" and ".png" extensions. Here's an example:
 
+```python
 File_Types = {
     ".jpg": "Pictures",
     ".png": "Pictures",
@@ -73,6 +75,7 @@ Beyond the File_Types dictionary, you can further customize this script to suit 
 Change Default Target Directory
 
 If you don't want to organize the Downloads directory or wish to organize a different directory, update the Change_Directory() function with the path to your target directory.
+```python
 def Change_Directory():
     # Store the current working directory
     Current_Directory = os.getcwd()
@@ -90,6 +93,7 @@ The script currently attempts to create subdirectories if they don't already exi
 ## Exclude Specific File Types
 
 If you have specific file types that you want to exclude from organization, you can add conditional statements in the Moving_Files() function to skip those file types. For instance, if you want to skip organizing ".exe" files, you can add:
+```python
 if extension == ".exe":
     continue  # Skip organizing .exe files
 
