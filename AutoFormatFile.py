@@ -1,5 +1,6 @@
 import os
 import shutil
+from time import time, ctime
 
 # Define a mapping of file extensions to directory names
 File_Types = {
@@ -62,12 +63,33 @@ def Moving_Files(Directory):
             # Create the full path to the source file and the destination path
             source_path = os.path.join(Directory, file)
             new_path = os.path.join(destination_directory, file)
+            writing_Log("LogFile/Log.txt",source_path,new_path)
 
             # Move the file to the destination directory
             shutil.move(source_path, new_path)
         else:
             # If the extension is not in the dictionary, continue to the next file
             continue
+
+# Create a folder to contains the log file
+def Creating_Directory_LogFile():
+    try:
+        os.mkdir("LogFile")
+    except FileExistsError:
+        pass
+
+def writing_Log(filename,old_location, new_location):
+    current_time = Get_Current_Time()
+    with open(filename, "a") as file:
+        file.write(f"The last modified occurs: {current_time}")
+        file.write(f"\nFile {old_location} has been moved to {new_location}")
+        print("Log file has been created")
+
+
+def Get_Current_Time() -> str:
+    t = time() 
+
+    return ctime(t)
 
 # Entry point of the script
 if __name__ == "__main__":
@@ -82,3 +104,7 @@ if __name__ == "__main__":
 
     # Move files to their respective subdirectories based on their extensions
     Moving_Files(Directory)
+
+    # Create a folder to contains the log file
+    Creating_Directory_LogFile()
+    
